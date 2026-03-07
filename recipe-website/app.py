@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE = os.path.join(BASE_DIR, "recipes.db")
 UPLOAD_FOLDER = os.path.join(BASE_DIR, "static", "uploads")
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "webp", "heic"}
-MAX_IMAGE_SIZE = 1200  # max width/height in pixels
+MAX_IMAGE_SIZE = 800  # max width/height in pixels
 
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024  # 16 MB max upload
@@ -132,10 +132,8 @@ def save_image(file):
     if not allowed_file(file.filename):
         return None
 
-    ext = file.filename.rsplit(".", 1)[1].lower()
-    if ext == "heic":
-        ext = "jpg"
-    filename = f"{uuid.uuid4().hex}.{ext}"
+    # Always save as JPEG for smaller file size
+    filename = f"{uuid.uuid4().hex}.jpg"
     filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
 
     img = Image.open(file.stream)
@@ -144,10 +142,10 @@ def save_image(file):
     img = ImageOps.exif_transpose(img)
     # Resize if too large
     img.thumbnail((MAX_IMAGE_SIZE, MAX_IMAGE_SIZE), Image.LANCZOS)
-    # Convert HEIC / RGBA to RGB for JPEG
-    if img.mode in ("RGBA", "P"):
+    # Convert to RGB for JPEG
+    if img.mode in ("RGBA", "P", "LA"):
         img = img.convert("RGB")
-    img.save(filepath, quality=85, optimize=True)
+    img.save(filepath, format="JPEG", quality=70, optimize=True)
     return filename
 
 
