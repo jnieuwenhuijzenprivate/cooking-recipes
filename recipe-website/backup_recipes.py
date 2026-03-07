@@ -68,12 +68,17 @@ def export_recipes():
 
 def git_commit_and_push():
     """Stage backup files, uploaded images, and push to GitHub."""
-    os.chdir(BASE_DIR)
+    # Find the git repo root (may be a parent of BASE_DIR)
+    result = subprocess.run(
+        ["git", "rev-parse", "--show-toplevel"],
+        capture_output=True, text=True, cwd=BASE_DIR,
+    )
+    repo_root = result.stdout.strip() if result.returncode == 0 else BASE_DIR
+    os.chdir(repo_root)
 
-    # Stage the backup JSON files and uploaded images
-    subprocess.run(["git", "add", "recipe_backups/"], check=True)
-    subprocess.run(["git", "add", "static/uploads/"], check=True)
-    subprocess.run(["git", "add", "recipes.db"], check=False)  # optional
+    # Stage the backup JSON files and uploaded images (paths relative to repo root)
+    subprocess.run(["git", "add", "--all", "recipe-website/recipe_backups/"], check=False)
+    subprocess.run(["git", "add", "--all", "recipe-website/static/uploads/"], check=False)
 
     # Check if there are changes to commit
     result = subprocess.run(
@@ -83,7 +88,7 @@ def git_commit_and_push():
 
     if result.returncode != 0:
         # There are staged changes
-        timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+        timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
         subprocess.run(
             ["git", "commit", "-m", f"Auto-backup recipes: {timestamp}"],
             check=True,
