@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Login — My Recipe Book{% endblock %}
+
+{% block content %}
+<div class="flex flex-col items-center justify-center min-h-[70vh]">
+    <div class="w-16 h-16 bg-brand-100 rounded-2xl flex items-center justify-center mb-6">
+        <svg class="w-8 h-8 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+        </svg>
+    </div>
+    <h1 class="text-xl font-bold mb-2">Welcome Back</h1>
+    <p class="text-sm text-gray-400 mb-8">Enter your PIN to continue</p>
+
+    <form method="POST" class="w-full max-w-xs">
+        <input type="password" name="pin" inputmode="numeric" pattern="[0-9]*" autofocus
+               placeholder="Enter PIN"
+               class="w-full px-4 py-4 bg-white border border-gray-200 rounded-2xl text-center text-lg tracking-widest
+                      focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent mb-4">
+        <button type="submit"
+                class="w-full py-4 bg-brand-500 text-white rounded-2xl font-semibold shadow-lg shadow-brand-500/30">
+            Unlock
+        </button>
+    </form>
+</div>
+{% endblock %}

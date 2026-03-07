@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}My Recipe Book{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<div class="flex items-center justify-between mb-4">
+    <div>
+        <h1 class="text-2xl font-bold text-gray-900">My Recipes</h1>
+        <p class="text-sm text-gray-500">{{ recipes|length }} recipe{{ 's' if recipes|length != 1 }}</p>
+    </div>
+</div>
+
+<!-- Search bar -->
+<form method="GET" action="{{ url_for('index') }}" class="mb-4">
+    <div class="relative">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <input type="text" name="q" value="{{ search }}" placeholder="Search recipes..."
+               class="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-sm
+                      focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+                      shadow-sm">
+        {% if category %}
+        <input type="hidden" name="category" value="{{ category }}">
+        {% endif %}
+    </div>
+</form>
+
+<!-- Category filter pills -->
+<div class="flex gap-2 overflow-x-auto hide-scrollbar mb-6 -mx-4 px-4">
+    <a href="{{ url_for('index', q=search) }}"
+       class="flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium
+              {% if not category %}bg-brand-500 text-white{% else %}bg-white text-gray-600 border border-gray-200{% endif %}">
+        All
+    </a>
+    {% for cat in categories %}
+    <a href="{{ url_for('index', q=search, category=cat) }}"
+       class="flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium
+              {% if category == cat %}bg-brand-500 text-white{% else %}bg-white text-gray-600 border border-gray-200{% endif %}">
+        {{ cat }}
+    </a>
+    {% endfor %}
+</div>
+
+<!-- Recipe grid -->
+{% if recipes %}
+<div class="grid grid-cols-2 gap-3">
+    {% for recipe in recipes %}
+    <a href="{{ url_for('recipe_detail', recipe_id=recipe.id) }}"
+       class="recipe-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        {% if recipe.image_filename %}
+        <div class="aspect-square overflow-hidden">
+            <img src="{{ url_for('static', filename='uploads/' + recipe.image_filename) }}"
+                 alt="{{ recipe.title }}"
+                 class="w-full h-full object-cover"
+                 loading="lazy">
+        </div>
+        {% else %}
+        <div class="aspect-square bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center">
+            <svg class="w-12 h-12 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+            </svg>
+        </div>
+        {% endif %}
+        <div class="p-3">
+            <h3 class="font-semibold text-sm leading-tight line-clamp-2">{{ recipe.title }}</h3>
+            {% if recipe.category %}
+            <span class="inline-block mt-1 text-xs text-brand-600 bg-brand-50 px-2 py-0.5 rounded-full">
+                {{ recipe.category }}
+            </span>
+            {% endif %}
+            {% if recipe.cook_time or recipe.prep_time %}
+            <div class="flex items-center gap-1 mt-1.5 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                {{ recipe.prep_time or '' }}{% if recipe.prep_time and recipe.cook_time %} + {% endif %}{{ recipe.cook_time or '' }}
+            </div>
+            {% endif %}
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<!-- Empty state -->
+<div class="text-center py-16">
+    <div class="w-20 h-20 bg-brand-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-10 h-10 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+        </svg>
+    </div>
+    <h2 class="text-lg font-semibold text-gray-700 mb-1">No recipes yet</h2>
+    <p class="text-sm text-gray-400 mb-6">Tap the + button to add your first recipe</p>
+    <a href="{{ url_for('recipe_new') }}"
+       class="inline-flex items-center px-6 py-3 bg-brand-500 text-white rounded-full font-medium shadow-lg">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+        </svg>
+        Add Recipe
+    </a>
+</div>
+{% endif %}
+{% endblock %}
