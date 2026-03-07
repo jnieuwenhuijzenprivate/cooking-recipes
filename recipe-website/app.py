@@ -2,6 +2,7 @@ import os
 import sqlite3
 import uuid
 import secrets
+import threading
 from datetime import datetime
 from functools import wraps
 
@@ -366,6 +367,7 @@ def _save_recipe(recipe_id):
 
     db.commit()
     flash("Recipe saved!", "success")
+    trigger_backup()
     return redirect(url_for("recipe_detail", recipe_id=recipe_id))
 
 
@@ -379,7 +381,26 @@ def recipe_delete(recipe_id):
         db.execute("DELETE FROM recipes WHERE id = ?", (recipe_id,))
         db.commit()
         flash("Recipe deleted", "success")
+        trigger_backup()
     return redirect(url_for("index"))
+
+
+# ---------------------------------------------------------------------------
+# Auto-backup to GitHub (runs in background thread)
+# ---------------------------------------------------------------------------
+
+def run_backup():
+    """Export recipes and push to GitHub in a background thread."""
+    try:
+        from backup_recipes import export_recipes, git_commit_and_push
+        export_recipes()
+        git_commit_and_push()
+    except Exception as e:
+        app.logger.warning(f"Auto-backup failed: {e}")
+
+def trigger_backup():
+    """Fire-and-forget backup so it doesn't slow down the request."""
+    threading.Thread(target=run_backup, daemon=True).start()
 
 
 # ---------------------------------------------------------------------------
