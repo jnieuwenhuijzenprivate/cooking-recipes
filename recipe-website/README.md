@@ -29,14 +29,6 @@ Open http://localhost:5000 on your phone (same Wi-Fi network) or browser.
 2. Tap **Share** → **Add to Home Screen**
 3. The app will work in standalone mode like a native app
 
-## PIN Protection
-
-To protect recipe editing, set a PIN in your `.env` file:
-
-```
-APP_PIN=1234
-```
-
 ## API Quick-Add
 
 You can add recipes via API (useful for Siri Shortcuts, etc.):
