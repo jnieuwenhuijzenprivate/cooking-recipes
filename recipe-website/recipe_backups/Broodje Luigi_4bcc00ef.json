@@ -1,15 +1,35 @@
 {
   "id": "4bcc00ef16ea40d9b632df1c298b3a76",
   "title": "Broodje Luigi",
-  "description": "",
-  "servings": "",
-  "prep_time": "",
-  "cook_time": "",
-  "category": "",
-  "image_filename": null,
+  "description": "Een zalig Italiaans broodje vanuit Utrecht geïmporteerd van de heer Mario. Deze versie krijgt een groene upgrade met komkommer en pesto!",
+  "servings": "1",
+  "prep_time": "0",
+  "cook_time": "15",
+  "category": "Lunch",
+  "image_filename": "87d63373beb14ef597b7c3ad8124f8ca.jpg",
   "created_at": "2026-03-08T11:55:09.458742",
-  "updated_at": "2026-03-08T11:55:09.458742",
-  "ingredients": [],
-  "steps": [],
-  "tags": []
+  "updated_at": "2026-03-08T12:41:49.054719",
+  "ingredients": [
+    "1 Afbak Italiaanse bol",
+    "2 kleine plakken Salami",
+    "2 grote plakken kaas",
+    "4 plakjes Chorizo",
+    "1 potje cocktail (zure) groente",
+    "1 klein potje rode pesto (rossa)",
+    "1 potje jalopeño",
+    "Een paar plakjes komkommer"
+  ],
+  "steps": [
+    "1. Verwarm de oven voor op het aantal graden dat op de verpakking staat (vaak 220°C).",
+    "2. Bak je Italiaanse bol 4 minuten.",
+    "3. Snij je bol open en beleg de onderkant met Salami, kaas en chorizo",
+    "4. Bak nog 2 minuten met beide delen los op de grill plaat. Dit zorgt ervoor dat de binnenkant van beide helften van de bol krokant worden.",
+    "5. Beleg de bol verder met wat plakjes komkommer, zure groente, jalapeño en pesto."
+  ],
+  "tags": [
+    "Lunch",
+    "Italian",
+    "Brood",
+    "Sandwich"
+  ]
 }
