@@ -92,7 +92,7 @@ def init_db():
 # Auth – simple PIN / password protection (optional)
 # ---------------------------------------------------------------------------
 
-APP_PIN = os.environ.get("APP_PIN")  # Set to enable PIN protection
+APP_PIN = os.environ.get("APP_PIN", "1234")
 
 
 def login_required(f):
