@@ -1,4 +1,4 @@
-# My Recipe Book 🍳
+# Jonah's Smullenboek 🍳
 
 A mobile-first personal recipe website built with Flask + SQLite + Tailwind CSS.
 
@@ -28,6 +28,14 @@ Open http://localhost:5000 on your phone (same Wi-Fi network) or browser.
 1. Open the site in Safari (iOS) or Chrome (Android)
 2. Tap **Share** → **Add to Home Screen**
 3. The app will work in standalone mode like a native app
+
+## PIN Protection
+
+To protect recipe editing, set a PIN in your `.env` file:
+
+```
+APP_PIN=1234
+```
 
 ## API Quick-Add
 
