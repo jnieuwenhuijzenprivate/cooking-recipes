@@ -471,7 +471,7 @@ def manifest():
         "background_color": "#ffffff",
         "theme_color": "#f97316",
         "icons": [
-            {"src": "/static/icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+            {"src": "/static/icons/icon-193.png", "sizes": "192x192", "type": "image/png"},
             {"src": "/static/icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
         ],
     })
