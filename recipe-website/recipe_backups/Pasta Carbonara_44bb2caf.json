@@ -1,21 +1,28 @@
 {
   "id": "44bb2caf5784415fb73760227203f379",
   "title": "Pasta Carbonara",
-  "description": "Deze Carbonara volgt het klassieke recept, maar de guanciale is wel vervangen door de pancetta. Is lekkerder 😉",
+  "description": "Deze Carbonara volgt het klassieke recept en staat dus snel op tafel. De traditionele guanciale is wel vervangen door de pancetta. Gewoon omdat pancetta lekkerder is 😉. Goed ok te combineren met salade, zodat je ook nog wat groente binnenkrijgt.",
   "servings": "2",
   "prep_time": "5 min",
   "cook_time": "25 min",
   "category": "Dinner",
   "image_filename": "95104879ae0f4b63bf782b5f8a92d104.jpg",
   "created_at": "2026-03-08T14:50:23.522347",
-  "updated_at": "2026-03-08T19:12:05.606963",
+  "updated_at": "2026-03-08T19:25:12.158704",
   "ingredients": [
     "250 gr papardelle",
     "4 eieren (waarvan 3 alleen eigeel en 1 heel ei)",
     "300gr pancetta",
     "100gr Parmezaanse kaas"
   ],
-  "steps": [],
+  "steps": [
+    "Kook de pasta 1 minuut korter dan wat er op de verpakking staat. Vang iets voor het einde wat kookvocht op. Ondertussen bak je de pancetta bruin.",
+    "Split 3 eieren en houd het eigeel en vang het eigeel op in een kom. Voeg 1 heel ei toe. Klop de eieren los, voeg de parmezaanse kaas en wat peper toe.",
+    "Gooi wat scheutjes afgekoeld kookvocht bij het eimengsel totdat het een mooie vloeibare saus is. Als het kookvocht te heet is, voeg dan wat koud water erbij. Te heet kookvocht zorgt ervoor dat het ei in je eimengsel te snel stolt en dat wil je niet.",
+    "Giet je pasta af voeg het bij je pancetta. Roer goed door en haal van het vuur.",
+    "Na 1.5 minuten van het vuur kun je het eimengsel toevoegen en roer goed door.",
+    "Serveer met parmezaanse kaas en een snuf peper naar smaak"
+  ],
   "tags": [
     "Italian",
     "Pasta",
