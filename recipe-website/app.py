@@ -464,8 +464,8 @@ def api_add_recipe():
 @app.route("/manifest.json")
 def manifest():
     return jsonify({
-        "name": "My Recipe Book",
-        "short_name": "Recipes",
+        "name": "Jonah's Smullenboek",
+        "short_name": "Smullenboek",
         "start_url": "/",
         "display": "standalone",
         "background_color": "#ffffff",
