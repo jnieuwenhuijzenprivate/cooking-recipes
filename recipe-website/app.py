@@ -465,11 +465,11 @@ def api_add_recipe():
 def manifest():
     return jsonify({
         "name": "Jonah's Smullenboek",
-        "short_name": "Smullenboek",
+        "short_name": "Jonah's Smullenboek",
         "start_url": "/",
         "display": "standalone",
         "background_color": "#ffffff",
-        "theme_color": "#f97316",
+        "theme_color": "#6B7F3B",
         "icons": [
             {"src": "/static/icons/icon-193.png", "sizes": "192x192", "type": "image/png"},
             {"src": "/static/icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
