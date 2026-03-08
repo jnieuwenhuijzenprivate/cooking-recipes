@@ -44,7 +44,7 @@
                 <img id="preview-img" class="w-full h-full object-cover hidden" alt="Preview">
                 {% endif %}
             </div>
-            <input type="file" id="image-input" name="image" accept="image/*" capture="environment"
+            <input type="file" id="image-input" name="image" accept="image/*"
                    class="hidden" onchange="previewImage(this)">
             {% if recipe and recipe.image_filename %}
             <div class="mt-2 flex justify-end">
