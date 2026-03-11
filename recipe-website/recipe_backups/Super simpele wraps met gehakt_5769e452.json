@@ -1,15 +1,31 @@
 {
   "id": "5769e452ce02456ea300766de2592da4",
   "title": "Super simpele wraps met gehakt",
-  "description": "",
-  "servings": "",
-  "prep_time": "",
-  "cook_time": "",
+  "description": "Hele snelle en gemakkelijke wraps met gehakt!",
+  "servings": "12 wraps",
+  "prep_time": "20 min",
+  "cook_time": "15 min",
   "category": "Dinner",
   "image_filename": null,
   "created_at": "2026-03-08T14:35:38.265553",
-  "updated_at": "2026-03-08T14:55:28.958432",
-  "ingredients": [],
+  "updated_at": "2026-03-11T10:55:07.239448",
+  "ingredients": [
+    "1000 gr rundergehakt",
+    "3 rode paprika's",
+    "150 gr mais",
+    "400gr kidneybonen",
+    "Zak geraspte kaas",
+    "Creme fraiche",
+    "2 knoflooktenen",
+    "± 90gr burritokruiden",
+    "200gr ijsbergsla",
+    "460gr salsa (Santa Maria)",
+    "12 wraps"
+  ],
   "steps": [],
-  "tags": []
+  "tags": [
+    "Mexican",
+    "wraps",
+    "snel"
+  ]
 }
