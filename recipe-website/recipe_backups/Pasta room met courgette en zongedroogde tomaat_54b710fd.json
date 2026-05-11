@@ -8,8 +8,15 @@
   "category": "Dinner",
   "image_filename": null,
   "created_at": "2026-03-08T14:27:47.678667",
-  "updated_at": "2026-03-08T14:36:33.701887",
-  "ingredients": [],
+  "updated_at": "2026-05-11T16:12:41.240069",
+  "ingredients": [
+    "200gr Pipe Rigate",
+    "300gr (Vegetarische) kip",
+    "1 Potje zongedroogde tomaat",
+    "125ml kookroom",
+    "Italiaanse kruiden",
+    "Optioneel: (Parmezaanse) kaas voor garnering"
+  ],
   "steps": [],
   "tags": []
 }
