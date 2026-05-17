@@ -1,0 +1,37 @@
+{
+  "id": "24efb2b68a47421cab2e581cfddbef7d",
+  "title": "Slow-cooked Pasta Bolognese",
+  "description": "Deze slow cooked pasta bolognese heeft even wat tijd nodig maar is oh zo lekker. Het is de ideale basis voor een lasagne",
+  "servings": "4",
+  "prep_time": "15",
+  "cook_time": "300",
+  "category": "Dinner",
+  "image_filename": null,
+  "created_at": "2026-05-17T13:40:01.824224",
+  "updated_at": "2026-05-17T13:40:01.824224",
+  "ingredients": [
+    "500gr Papardelle",
+    "250gr Volle melk",
+    "600gr Soffritto of Italiaanse groente",
+    "500gr (mager) Rundergehakt",
+    "500gr Passata",
+    "60gr tomatenpurree",
+    "4 tenen knoflook",
+    "2 blokjes runderbouillon",
+    "400gr tomatenblokjes",
+    "350ml Rode wijn (Chianti of Primitivo)",
+    "0.5 potje Italiaanse kruiden"
+  ],
+  "steps": [
+    "Peper en zout het gehakt goed",
+    "Bak het gehakt goed bruin",
+    "Bak de groente in een aparte pan",
+    "Voeg de tomatenpurree toe aan het gehakt om te ontzuren.",
+    "Voeg de wijn, passata, tomatenblokjes, tomatenpurree, bouillonblokjes, groente, melk en italiaanse kruiden toe"
+  ],
+  "tags": [
+    "italian",
+    "pasta",
+    "gehakt"
+  ]
+}
